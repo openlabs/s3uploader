@@ -7,30 +7,29 @@
 	</form>
     <p>Please select a file</p>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
         $(document).ready(function(){
-			search_string = window.location.search
-		    parseData = JSON.parse(window.atob(search_string.substring(6, search_string.length - 1)));
+		search_string = window.location.search
+		parseData = JSON.parse(window.atob(search_string.substring(6, search_string.length)));
 
-			console.log(parseData.fields);
+		console.log(parseData.fields);
 
-			for(var i = 0; i < parseData.fields.length; i++){
-				$('<input>').attr({
-				    type: 'hidden',
-					name: parseData.fields[i].name,
-					value: parseData.fields[i].value,
-				}).appendTo('form');
-			}
-
+		for(var i = 0; i < parseData.fields.length; i++){
 			$('<input>').attr({
-				type: 'file',
-				name: 'file'
+				type: 'hidden',
+				name: parseData.fields[i].name,
+				value: parseData.fields[i].value,
 			}).appendTo('form');
+		}
 
-			$('#upload-form').attr('action', parseData.action);
-		});
+		$('<input>').attr({
+			type: 'file',
+			name: 'file'
+		}).appendTo('form');
+
+		$('#upload-form').attr('action', parseData.action);
+	});
     </script>
   </body>
 </html>
-
