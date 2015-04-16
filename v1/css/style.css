@@ -1,5 +1,12 @@
 input[type=file] {
   display: inline;
+  margin-right: 10px;
+}
+input[type=submit] {
+  margin-right: 10px;
+}
+#upload-form-fields{
+  display: inline;
 }
 .bar {
   background-color: #B4F5B4;
@@ -10,7 +17,6 @@ input[type=file] {
 .filter-scale{
   opacity:0.5;
   cursor: not-allowed;
-  float: left;
   margin-right: 20px;
 }
 .select-text{
@@ -22,17 +28,15 @@ input[type=file] {
 .percent {
   display: inline-block;
   position: absolute;
-  width: 100%;
   text-align: center;
 }
 .progress{
-  margin-top: 20px;
+  width: 39%;
+  margin: auto;
 }
 #status{
-  position: absolute;
   margin-top: 30px;
   word-wrap: break-word;
-  width: 80%;
   text-align: center;
 }
 .brand-logo{
@@ -50,4 +54,9 @@ input[type=file] {
 }
 .multiple-tabs{
   margin-top: 28px;
+}
+@media(max-width: 768px){
+  .full-width-xs{
+    width: 100%;
+  }
 }
